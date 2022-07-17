@@ -1,17 +1,17 @@
-package work.normalian.demo;
+package work.normalian.demo.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class MainControllerTest {
 
 	@Test
 	void contextLoads() {
 	}
 
     @Test
-    void test10(){
-        System.out.println("Hello Test10");
+    void test01(){
+        System.out.println("Hello Test01");
     }
 }
