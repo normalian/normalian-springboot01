@@ -18,6 +18,11 @@ repositories {
 	mavenCentral()
 }
 
+// https://zenn.dev/donchan922/articles/ea76614f72b15e
+jar {
+    enabled = false
+}
+
 ext {
 	set('springCloudAzureVersion', "4.3.0")
 }
