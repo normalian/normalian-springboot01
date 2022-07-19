@@ -15,7 +15,7 @@ public class StudentController {
     @GetMapping("/{id}")
     public Student read(@PathVariable(required = false) String id){
         Student s = new Student();
-        s.setAge(10);
+        s.setAge(18);
         s.setName("Daisuke - ID:" + id + ".");
         return s;
     }
