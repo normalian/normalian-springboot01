@@ -49,8 +49,8 @@ jobs:
       run: docker push normalianspringbootacr01.azurecr.io/springapp/work-normalian-demo:${{ github.sha }}
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'myapp'
+        app-name: 'normalianspringbootapp01'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images: 'mycontainer.azurecr.io/myapp:${{ github.sha }}'
+        images: normalianspringbootacr01.azurecr.io/springapp/work-normalian-demo:${{ github.sha }}
 
 
