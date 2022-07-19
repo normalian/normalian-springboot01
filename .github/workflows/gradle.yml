@@ -39,7 +39,7 @@ jobs:
 #        login-server: 'normalianspringbootacr01' # default: index.docker.io
 #        username: ${{ secrets.ACR_USERNAME }}
 #        password: ${{ secrets.ACR_PASSWORD }}
-    - name: Build Docker image
+    - name: Login ACR
       run: docker login normalianspringbootacr01.azurecr.io -u ${{ secrets.ACR_USERNAME }} -p ${{ secrets.ACR_PASSWORD }}
     - name: Build Docker image
       run: docker build --build-arg JAR_FILE=build/libs/\*.jar -t springapp/work-normalian-demo:${{ github.sha }} .
@@ -47,5 +47,10 @@ jobs:
       run: docker tag springapp/work-normalian-demo:${{ github.sha }} normalianspringbootacr01.azurecr.io/springapp/work-normalian-demo:${{ github.sha }}
     - name: Push Docker image
       run: docker push normalianspringbootacr01.azurecr.io/springapp/work-normalian-demo:${{ github.sha }}
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'myapp'
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images: 'mycontainer.azurecr.io/myapp:${{ github.sha }}'
 
 
