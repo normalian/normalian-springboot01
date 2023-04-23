@@ -2,11 +2,12 @@ plugins {
 	id 'org.springframework.boot' version '2.7.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+//	id 'war'
 }
 
 group = 'work.normalian'
-version = '0.0.1-SNAPSHOT'
-//sourceCompatibility = '18'
+version = '0.0.2-SNAPSHOT'
+sourceCompatibility = '17'
 
 configurations {
 	compileOnly {
@@ -22,6 +23,10 @@ repositories {
 jar {
     enabled = false
 }
+
+//war {
+//    enabled = true
+//}
 
 ext {
 	set('springCloudAzureVersion', "4.3.0")
