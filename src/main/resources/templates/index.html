@@ -2,13 +2,16 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hello Daichi's page.</title>
+        <title>Hello, this is Daichi's web site.</title>
     </head>
     <body>
         <h1 th:text="${title}"></h1>
-        <p>
-            <div th:text="${message}"></div>
-        </p>
-        <p>This page is updated on 23th April 2023.</p>
+        <div>
+            <span th:text="${message}"></span>
+            <span th:if="${username != null}">
+                You are <span th:text="${username}"></span>.
+            </span>
+        </div>
+        <p>This page is updated on 5th May 2023.</p>
     </body>
 </html>
