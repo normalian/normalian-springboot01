@@ -1,6 +1,12 @@
 spring:
  cloud:
    azure:
+     cosmos:
+       uri : YOUR_COSMOSDB_ENDPOINT
+       key : YOUR_COSMOSDB_ENDPOINT_KEY
+       secondaryKey : YOUR_COSMOSDB_ENDPOINT_SECONDARYKEY
+       database : YOUR_COSMOSDB_NAME
+       queryMetricsEnabled : true
      active-directory:
        enabled: true
        profile:

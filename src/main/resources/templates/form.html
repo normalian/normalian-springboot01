@@ -2,19 +2,21 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>This is form test page.</title>
+        <title>Add your favorite restaurant here.</title>
     </head>
     <body>
         <h1 th:text="${title}"></h1>
         <p>
             <div th:text="${message}"></div>
         </p>
-        <form accept="form" method="post">
+        <form action="#" th:action="@{/form}" th:object="${restaurant}" method="POST">
             <ul>
                 <li>Name: <input type="text" name="name" size="20"></li>
-                <li>Age: <input type="text" name="age" size="20"></li>
+                <li>Genre: <input type="text" name="genre" size="20"></li>
+                <li>Google map URL: <input type="text" name="gmapUrl" size="20"></li>
+                <li>Comment: <br /><textarea name="description" rows="4" cols="40"></textarea></li>
             </ul>
-            <input type="submit" value="Login">
+            <input type="submit" value="submit">
         </form>
     </body>
 </html>
